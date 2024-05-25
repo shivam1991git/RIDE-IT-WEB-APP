@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Footer() {
     return (
 <footer className="footer-container mt-5">
-                <img src="assets/images/CabHUB.png" alt="Website Logo" className="footer-logo"></img>
+                <img src="assets/images/RIDE_IT.png" alt="Website Logo" className="footer-logo"></img>
                 <div className="footer-content">
                     <div className="footer-section quick-links">
                         <ul>

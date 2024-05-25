@@ -10,8 +10,6 @@ function About() {
             <div className="about">
                 <h1 className="animate-fade-in">About Us</h1>
                 <h3 className="animate-fade-in">Rating : 4.5 ⭐</h3>
-                <p className="animate-slide-in">Welcome to Tourist Point, where your journey begins with seamless car booking experiences tailored to your needs. Founded with a passion for simplifying travel and enhancing mobility, we strive to redefine the way you book and enjoy your rides.</p>
-
                 <div className="container-a">
                     <div className="feature animate-zoom-in">
                         <h2>Wide Selection of Vehicles</h2>
@@ -69,16 +67,11 @@ function About() {
             <Footer />
 
             <style jsx>{`
-                .aboutbody {
-                    font-family: Arial, sans-serif;
-                    background-color: #f4f4f9;
-                    padding: 20px;
-                }
+
 
                 .about {
-                    max-width: 900px;
-                    margin: 20px auto;
-                    background: white;
+                    max-width: 80%;
+                    margin: 20px auto;                 
                     padding: 20px;
                     border-radius: 10px;
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -104,7 +97,7 @@ function About() {
                 .feature, .team-member, .driver {
                     flex: 1;
                     padding: 20px;
-                    background: #f9f9f9;
+                   
                     border-radius: 10px;
                     transition: transform 0.3s ease;
                     cursor: pointer;
@@ -118,7 +111,7 @@ function About() {
                 .separation {
                     margin: 40px 0;
                     height: 2px;
-                    background: #eee;
+                  
                 }
 
                 .team, .drivers {

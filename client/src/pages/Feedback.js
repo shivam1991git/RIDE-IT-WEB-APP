@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import DefaultLayout from '../components/DefultLayout';
 import Footer from '../components/footer';
@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { userFeedback } from '../redux/actions/userActions';
 import { driverFeedback } from '../redux/actions/driverActions';
 import Spinner from '../components/Spinner';
+import { motion } from 'framer-motion';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -31,9 +32,9 @@ function Feedback() {
       case 'driverBehavior':
         setDriverBehaviorRating(value);
         break;
-        case 'userBehavior':
-          setUserBehaviorRating(value);
-          break;
+      case 'userBehavior':
+        setUserBehaviorRating(value);
+        break;
       case 'app':
         setAppRating(value);
         break;
@@ -67,14 +68,23 @@ function Feedback() {
     navigate('/');
   };
 
+  useEffect(() => {
+    AOS.refresh();
+  }, []);
+
   return (
     <div className="feedbackbody">
       {loading && <Spinner />}
       <DefaultLayout />
       <div className="container">
-        <h1>Share Your Opinion</h1>
+        <h1 data-aos="fade-up">Share Your Opinion</h1>
         <form id="feedback-form" onSubmit={handleSubmit}>
-          <div className="question">
+          <motion.div
+            className="question"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'linear' }}
+          >
             <label htmlFor="car-quality">How would you rate the quality of the car?</label>
             <div className="rating">
               {[5, 4, 3, 2, 1].map((value) => (
@@ -89,9 +99,14 @@ function Feedback() {
                 </label>
               ))}
             </div>
-          </div>
+          </motion.div>
           {user ? (
-            <div className="question">
+            <motion.div
+              className="question"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: 'linear', delay: 0.1 }}
+            >
               <label htmlFor="driver-behavior">How would you rate the behavior of the driver?</label>
               <div className="rating">
                 {[5, 4, 3, 2, 1].map((value) => (
@@ -106,11 +121,16 @@ function Feedback() {
                   </label>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ) : null}
-           {driver ? (
-            <div className="question">
-              <label htmlFor="driver-behavior">How would you rate the behavior of the user?</label>
+          {driver ? (
+            <motion.div
+              className="question"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: 'linear', delay: 0.2 }}
+            >
+              <label htmlFor="user-behavior">How would you rate the behavior of the user?</label>
               <div className="rating">
                 {[5, 4, 3, 2, 1].map((value) => (
                   <label key={value} className={value <= userBehaviorRating ? 'star selected' : 'star'}>
@@ -124,9 +144,14 @@ function Feedback() {
                   </label>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ) : null}
-          <div className="question">
+          <motion.div
+            className="question"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'linear', delay: 0.3 }}
+          >
             <label htmlFor="app-rating">Rate the performance of our app:</label>
             <div className="rating">
               {[5, 4, 3, 2, 1].map((value) => (
@@ -141,8 +166,13 @@ function Feedback() {
                 </label>
               ))}
             </div>
-          </div>
-          <div className="question">
+          </motion.div>
+          <motion.div
+            className="question"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'linear', delay: 0.4 }}
+          >
             <label htmlFor="additional-comments">Any additional comments or suggestions?</label>
             <textarea
               id="additional-comments"
@@ -151,8 +181,15 @@ function Feedback() {
               value={additionalComments}
               onChange={handleTextAreaChange}
             ></textarea>
-          </div>
-          <button type="submit">Submit Feedback</button>
+          </motion.div>
+          <motion.button
+            type="submit"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.3 }}
+          >
+            Submit Feedback
+          </motion.button>
         </form>
       </div>
       <Footer />

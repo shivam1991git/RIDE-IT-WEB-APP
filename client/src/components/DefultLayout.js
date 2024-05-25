@@ -33,7 +33,7 @@ function DefaultLayout(props) {
         <Row gutter={16} justify='center'>
           <Col lg={20} sm={24} xs={24}>
             <div className='d-flex justify-content-between'>
-              <h1><b><Link to={admin ? '/admindashboard' : '/'} style={{ color: 'gold' }}>RIDE'IT</Link></b></h1>
+              <Link to={admin ? '/admindashboard' : '/'} ><img src="assets/images/RIDE_IT.png" alt="Website Logo" className="footer-logo"></img></Link>
               <Space size="middle" className="center-links">
                 {showLinks ? (
                   <>

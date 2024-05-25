@@ -1,17 +1,4 @@
-.aboutbody {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    padding: 20px;
-}
 
-.about {
-    max-width: 900px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
 h1, h2, h3 {
     margin: 0 0 20px 0;
@@ -122,26 +109,23 @@ p {
 
 
 .about {
-   
+    background: linear-gradient(rgb(0, 255, 213) 0%, rgb(227, 129, 24) 100%);
     padding: 27px;
     text-align: center;
 }
 .aboutbody{
-    /* background: linear-gradient(rgb(230, 9, 46) 0%, rgb(14, 89, 228) 100%); */
-    background-color: wheat;
+    background: linear-gradient(rgb(230, 9, 46) 0%, rgb(14, 89, 228) 100%);
 }
 
 .about h1 {
     font-size: 50px;
-    /* color: #efeb10; */
-    color: #000000;
+    
+    color: black;
     margin-bottom: 20px;
 }
 
 .about p {
     font-size: 18px;
-    /* color:rgb(255, 255, 255);
-     */
      color: red;
     line-height: 1.6;
     margin-bottom: 20px;
@@ -150,7 +134,7 @@ p {
 .container-a {
    
     margin: 10px auto;
-    background-color: #3f078d;
+    background-color: #8d4fe3;
     padding: 24px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(7, 63, 205, 0.699);
@@ -170,7 +154,7 @@ p {
     margin: 20px;
     padding: 20px;
     border-radius: 10px;
-    background-color: #4d0fa3;
+    background-color: #7d3cd7;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
    
@@ -209,7 +193,7 @@ p {
 .team-member {
     margin-bottom: 40px;
     text-align: center;
-    background-color: #3f078d;
+    background-color: #7d3cd7;
 }
 .team-member:hover{
   transform: translate(-10px);
@@ -246,7 +230,7 @@ p {
 .driver {
     margin-bottom: 40px;
     text-align: center;
-    background-color: #3f078d;
+    background-color: #7d3cd7;
 
 }
 .driver:hover{
