@@ -3,7 +3,7 @@ const router = express.Router();
 const Booking = require("../models/bookingModel");
 const Car = require("../models/carModel");
 const moment = require('moment');
-const stripe = require('stripe')('sk_test_51P8N2XSCDEPHW6eGT9TYFopF2wnTe8ZX1KGTI7rzQgN2ISWDpKemjGDPPk5PueNTEgaGe1IsXJ9YIAaKgayoNGm200X91axpHR');
+const stripe = require('stripe')('Enter stripe Key');
 
 router.post("/bookcar", async (req, res) => {
     const { car, bookedTimeSlot } = req.body;
